@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {createApiClient, Anomaly} from './api';
+import MaterialTable from "material-table";
+
 
 
 import DragAndDrop from './Components/DragAndDrop/DragAndDrop'
@@ -69,19 +71,20 @@ export class App extends Component {
 
 	renderAnomalies = (anomalies: Anomaly[]) => {
 		return (
-			<div>
-				<table className="table">
-					<thead>
-						<tr>
-							<th> Timestep </th>
-							<th> Correlated Feature 1 </th>
-							<th> Correlated Feature 2 </th>
-						</tr>
-					</thead>
-					<tbody>
-						{this.getRowsData()}
-					</tbody>
-				</table>
+			<div className='table_container'>
+				<MaterialTable className='table'
+				columns={[
+					{title: 'Timestep', field: 'timestep' },
+					{title: 'Correlated Feature 1', field: 'feature1' },
+					{title: 'Correlated Feature 2', field: 'feature2' }
+				]}
+				data={this.state.anomalies}
+				title="Results:"
+				options={{
+		 			filtering: true,
+					maxBodyHeight: 370,
+	 			}}
+				/>
 			</div>
 	 );
 	 }
@@ -101,8 +104,8 @@ export class App extends Component {
 				</div>
 				<div className="right">
 					<div className = "anomalies">
-					{anomalies ? <div className='results'>Showing {anomalies.length} results</div> : null }
-					{anomalies ? this.renderAnomalies(anomalies) : <h2> Waiting for Anomalies </h2>}
+					{anomalies ? <div className='text'>Found <mark className='colored'>{anomalies.length}</mark> anomalies</div> : null }
+					{anomalies ? this.renderAnomalies(anomalies) : <div className='text'>waiting for request...</div>}
 					</div>
 				</div>
 			</main>

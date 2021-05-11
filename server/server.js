@@ -26,24 +26,18 @@ app.post(serverPATH, (req, res)=> {
   console.log(object[0].A);
   var got = model.get_anomalies(object[0], object[1], algorithm)
   console.log()
-  var anomaly1 = {
-    timestep: 400,
-    feature1: 'f1_anomaly1',
-    feature2: 'f2_anomaly1'
-  };
-  var anomaly2 = {
-    timestep: 500,
-    feature1: 'f1_anomaly2',
-    feature2: 'f2_anomaly2'
-  };
-  var anomaly3 = {
-    timestep: 600,
-    feature1: 'f1_anomaly3',
-    feature2: 'f2_anomaly3'
-  };
-  var final = [anomaly1, anomaly2, anomaly3];
-  console.log(final)
-  res.send(final);
+  let anomalies = []
+  for (let i = 0; i < 100; i++) {
+    var anomaly = {
+      timestep: Math.random(),
+      feature1: 'check'+i,
+      feature2: 'f2_'+i
+    }
+    anomalies.push(anomaly)
+  }
+
+  console.log(anomalies)
+  res.send(anomalies);
 })
 
 app.listen(9876);
