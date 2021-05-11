@@ -1,4 +1,4 @@
-#How to start it:
+# How to start it:
 1. Make sure you have the latest version of node
 2. Download the files
 3. Make sure you have no "node-modules" folders anywhere in the project
