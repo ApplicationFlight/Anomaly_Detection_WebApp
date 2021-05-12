@@ -58,7 +58,7 @@ The configuration folder defines important configs for the entire app. (such as 
 On the set-up box (on the left), you can firstly pick which type of algorithm you want to use. You can then proceed to upload the relevant files in the drag-zone. Once the set-up is ready, you can send to server with the 'send' button. The 'send' button won't work until the set-up has been completed.  
 After sending, as you examine the anomalies received, all set-up buttons will get disabled. To restare a new detection, click on the 'restart' button next to the 'send'.  
 
-![Setup](readME_Media/set-up.png?raw=true "Title")
+![Setup](readME_Media/set-up.png?raw=true "Title"| width=300)
 
 
 The request will send an `HTTP POST` at port `9876` to server. The type of algorithm selected will be included as a query parameter. As of:
