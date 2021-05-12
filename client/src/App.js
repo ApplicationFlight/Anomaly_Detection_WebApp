@@ -36,7 +36,7 @@ export class App extends Component {
 			lines[0].split(',').forEach(function (column, i) {
 				let value = [];
 				for (var j = 1; j < lines.length; j++) {
-					value.push(lines[j].split(',')[i]);
+					value.push(Number(lines[j].split(',')[i]));
 				}
 				train_object[column] = value;
 			});
@@ -49,7 +49,7 @@ export class App extends Component {
 			lines[0].split(',').forEach(function (column, i) {
 				let value = [];
 				for (var j = 1; j < lines.length; j++) {
-					value.push(lines[j].split(',')[i]);
+					value.push(Number(lines[j].split(',')[i]));
 				}
 				anomaly_object[column] = value;
 			});
@@ -107,9 +107,8 @@ export class App extends Component {
 					</div>
 				</div>
 				<div className='footer'>
-					<p> This App was made by: </p>
+					<p> This App was developed by: </p>
 					<p> Sara Spagnoletto, Eva Hallermeier, Samuel Memmi, Gali Seregin </p>
-					<p> In 2021 © </p>
 					<p className='github' onClick={(e) => {e.preventDefault(); window.location.href='https://github.com/ApplicationFlight/Anomaly_Detection_WebApp';}}> Github </p>
 				</div>
 			</main>

@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const model = require('../model/SimpleAnomalyDetector')
+const model = require('../model/LearnandDetect')
 
 const serverPATH = '/api/detect'
 
@@ -20,12 +20,8 @@ app.use((_, res, next) => {
 app.post(serverPATH, (req, res)=> {
   let object = req.body.object;
   let algorithm = req.query.model_type
-  console.log(object[0]);
-  console.log(object[1]);
-  console.log(algorithm);
-  console.log(object[0].A);
+
   var got = model.get_anomalies(object[0], object[1], algorithm)
-  console.log()
   let anomalies = []
   for (let i = 0; i < 100; i++) {
     var anomaly = {
@@ -35,8 +31,6 @@ app.post(serverPATH, (req, res)=> {
     }
     anomalies.push(anomaly)
   }
-
-  console.log(anomalies)
   res.send(anomalies);
 })
 
