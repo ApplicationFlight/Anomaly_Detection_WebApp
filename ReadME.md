@@ -62,7 +62,8 @@ After sending, as you examine the anomalies received, all set-up buttons will ge
   <img src="readME_Media/set-up.png" width="800"/>
 </kbd>
 
-
+<br/><br/>
+<br/><br/>
 The request will send an `HTTP POST` at port `9876` to server. The type of algorithm selected will be included as a query parameter. As of:
 ```
 http://localhost:8000/detect/?model_type=hybrid
