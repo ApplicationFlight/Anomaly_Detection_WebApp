@@ -15,7 +15,7 @@
 .title {
   margin-top: 2vh;
   text-align: center;
-  font-size: 30px;
+  font-size: 2.1vw;
 }
 
 .buttons_container {
@@ -74,19 +74,6 @@
   width: 100%;
 }
 
-.drag-done {
-    /* previous*/
-    margin: auto;
-    margin-bottom: 5vh;
-    width: 90%;
-    height: 19vh;
-    border-radius: 5px;
-    border: black 1px solid;
-
-    /*new*/
-    opacity: 100;
-}
-
 .upload_image-done {
   margin: 1vh auto 0 auto;
   width: 25%;
@@ -143,5 +130,5 @@ p {
 .button-active {
     opacity: 1;
     box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.5), inset 4px 4px 8px rgba(0, 0, 0, 0.1);
-    color: #66ff66;
+    color: #54bb7d;
 }

@@ -1,11 +1,20 @@
-.table_container {
-  padding: 2% 7% 0% 7%;
+header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  padding: auto;
+  text-align: center;
+  color: #f0f0f3;
+  font-family: 'Iceland', cursive;
+  font-family: 'Racing Sans One', cursive;
+  font-size: 5vw;
+  letter-spacing: 1vw;
+  text-shadow: 2px 2px #8c8d8e;
 }
 
-tr.mat-footer-row {
-    border: 1px solid #e7e7e7;
-    font-weight: bold;
-    height: 1px !important;
+.table_container {
+  padding: 2% 7% 0% 7%;
 }
 
 .text {
@@ -13,7 +22,7 @@ tr.mat-footer-row {
   letter-spacing: 1.5px;
   font-weight: lighter;
   text-align: center;
-  font-size: 3vw;
+  font-size: 2vw;
   font-family:'GlacialIndifferenceRegular';
 }
 

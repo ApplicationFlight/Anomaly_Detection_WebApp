@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import './DragAndDrop.scss'
-import { AiOutlineReload } from 'react-icons/ai';
-import { AiOutlineSend } from 'react-icons/ai';
+import { AiOutlineReload,  AiOutlineSend } from 'react-icons/ai';
 
 var final_algorithm = false;
 var one_done = false;
@@ -51,11 +50,10 @@ class DragAndDrop extends Component {
         two_file = files[0];
       }
       document.getElementById(id).style.background = '#90ee90';
-      document.getElementById(id).classList.remove('drag');
-      document.getElementById(id).classList.add('drag-done');
       document.getElementById(id+"_image").classList.remove('upload_image');
       document.getElementById(id+"_image").classList.add('upload_image-done');
     } else {
+      document.getElementById(id).style.background = "#f0f0f2";
       window.alert("Please upload a correct CSV file");
     }
   }

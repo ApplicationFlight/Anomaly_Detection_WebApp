@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {createApiClient, Anomaly} from './api';
 import MaterialTable from "material-table";
-
-
-
+import { AiOutlineClockCircle, AiOutlineArrowDown } from 'react-icons/ai';
 import DragAndDrop from './Components/DragAndDrop/DragAndDrop'
 import './App.css'
 import './table.css'
@@ -94,8 +92,9 @@ export class App extends Component {
 
     return (
 			<main>
-				<header>
-				</header>
+				<link rel="preconnect" href="https://fonts.gstatic.com"/>
+				<link href="https://fonts.googleapis.com/css2?family=Iceland&family=Racing+Sans+One&display=swap" rel="stylesheet"/>
+				<header>ANOMALY DETECTION SERVER</header>
 				<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/glacial-indifference" type="text/css"/>
 				<div className="left">
 					<div className="logo">
@@ -104,8 +103,8 @@ export class App extends Component {
 				</div>
 				<div className="right">
 					<div className = "anomalies">
-					{anomalies ? <div className='text'>Found <mark className='colored'>{anomalies.length}</mark> anomalies</div> : null }
-					{anomalies ? this.renderAnomalies(anomalies) : <div className='text'>waiting for request...</div>}
+					{anomalies ? <div className='text'><AiOutlineArrowDown className='icons'/> Found <mark className='colored'>{anomalies.length}</mark> anomalies</div> : null }
+					{anomalies ? this.renderAnomalies(anomalies) : <div className='text'> <AiOutlineClockCircle className='icons'/>  waiting for request...</div>}
 					</div>
 				</div>
 			</main>
