@@ -5,17 +5,8 @@ import { AiOutlineClockCircle, AiOutlineArrowDown, AiFillGithub} from 'react-ico
 import DragAndDrop from './Components/DragAndDrop/DragAndDrop'
 import './App.css'
 
-export type AppState = {
-	anomalies?: Anomaly[],
-}
 
 const api = createApiClient();
-
-const RenderRow = (props) =>{
-	return props.keys.map((key, index)=>{
-		return <td key={props.data[key]}>{props.data[key]}</td>
-	})
-}
 
 export class App extends Component {
 
@@ -56,14 +47,6 @@ export class App extends Component {
 			reader1.readAsBinaryString(file1);
 		}
 		reader2.readAsBinaryString(file2);
-	}
-
-	getRowsData = function(){
-		var items = this.state.anomalies;
-		var keys = Object.keys(this.state.anomalies[0]);
-		return items.map((row, index)=>{
-			return <tr key={index}><RenderRow key={index} data={row} keys={keys}/></tr>
-		})
 	}
 
 	renderAnomalies = (anomalies: Anomaly[]) => {
