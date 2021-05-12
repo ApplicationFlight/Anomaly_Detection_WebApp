@@ -36,8 +36,9 @@ Main technologies:
 - `Javascript`
 - `Node.js`
 - `React`
+- `CSS`
 
-The HTTP connection is made with:
+The HTTP connection is made using:
 - `Express` (on server side)
 - `Axios` (on client side)
 
@@ -45,9 +46,9 @@ Various other libraries have been used, mainly on the client interface side,  yo
 
 ### MVC Architechture
 
-**Model**: the detection algorithm lay here.
-**View**: the page interface in React + the client api lay here.
-**Controller**: the server lays here.
+**Model**: the detection algorithm lay here.  
+**View**: the page interface in React + the client api lay here.  
+**Controller**: the server lays here.  
 
 **Other Folders**
 The configuration folder defines important configs for the entire app. (such as communication ports and addresses)
@@ -57,7 +58,12 @@ The configuration folder defines important configs for the entire app. (such as 
 On the set-up box (on the left), you can firstly pick which type of algorithm you want to use. You can then proceed to upload the relevant files in the drag-zone. Once the set-up is ready, you can send to server with the 'send' button. The 'send' button won't work until the set-up has been completed.  
 After sending, as you examine the anomalies received, all set-up buttons will get disabled. To restare a new detection, click on the 'restart' button next to the 'send'.  
 
-// picture of box
+<img
+src=readME_Media/set-up.jpg”
+raw=true
+alt=“Setup”
+style=“margin-right: 10px;”
+/>
 
 The request will send an `HTTP POST` at port `9876` to server. The type of algorithm selected will be included as a query parameter. As of:
 ```
