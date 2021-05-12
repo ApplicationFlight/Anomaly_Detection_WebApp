@@ -59,3 +59,26 @@ header {
   color: red;
   background-color: transparent;
 }
+
+
+.footer {
+  color: white;
+  display: inline-block;
+  margin-bottom: -5px;
+  background-color: #303032;
+  width: 100%;
+  height: 15vh;
+}
+
+p {
+  margin-top: 0.5vh;
+  font-family:'GlacialIndifferenceRegular';
+}
+
+.github {
+  text-decoration: underline;
+}
+
+.github:hover {
+  cursor: pointer;
+}

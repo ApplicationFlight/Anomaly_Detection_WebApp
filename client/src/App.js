@@ -4,7 +4,6 @@ import MaterialTable from "material-table";
 import { AiOutlineClockCircle, AiOutlineArrowDown } from 'react-icons/ai';
 import DragAndDrop from './Components/DragAndDrop/DragAndDrop'
 import './App.css'
-import './table.css'
 
 export type AppState = {
 	anomalies?: Anomaly[],
@@ -106,6 +105,12 @@ export class App extends Component {
 					{anomalies ? <div className='text'><AiOutlineArrowDown className='icons'/> Found <mark className='colored'>{anomalies.length}</mark> anomalies</div> : null }
 					{anomalies ? this.renderAnomalies(anomalies) : <div className='text'> <AiOutlineClockCircle className='icons'/>  waiting for request...</div>}
 					</div>
+				</div>
+				<div className='footer'>
+					<p> This App was made by: </p>
+					<p> Sara Spagnoletto, Eva Hallermeier, Samuel Memmi, Gali Seregin </p>
+					<p> In 2021 © </p>
+					<p className='github' onClick={(e) => {e.preventDefault(); window.location.href='https://github.com/ApplicationFlight/Anomaly_Detection_WebApp';}}> Github </p>
 				</div>
 			</main>
     )
