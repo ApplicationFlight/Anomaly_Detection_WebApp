@@ -1,7 +1,7 @@
 {
   "packages": [
-	"client",
-	"server",
+	"View",
+	"Controller",
     "configuration"
   ],
   "version": "0.0.0"

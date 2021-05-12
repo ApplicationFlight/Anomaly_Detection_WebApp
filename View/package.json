@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "@anomaly_detection_web_app/View",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

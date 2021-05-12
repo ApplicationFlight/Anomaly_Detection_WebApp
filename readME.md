@@ -9,7 +9,7 @@ The user uploads a correct flight in `.csv` form for training, followed by a cur
 ## Getting Started
 
 ### Prerequisites
-The app is available in every OS. Before compiling and running, please make sure to have installed `node ^16.1.0` and to have available ports: `9876, 8000`.
+The app is available in every OS. Before compiling and running, please make sure to have installed `node ^16.1.0` and to have available ports: `9876, 8080`.
 
 In addition, prepare your `.csv` file for training and detection. A correct file is:
 

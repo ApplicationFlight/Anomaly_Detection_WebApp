@@ -12,16 +12,14 @@ function findThreshold(ps, len, rl) {
     return max;
 }
 
-
 function learnHelper(train_file, p, f1, f2, ps) {
-    if (p > 0.9) { 
+    if (p > 0.9) {
         var len = train_file[Object.keys(train_file)[0]].length - 1;
         var line = util.linear_reg(ps, len);
         var t = findThreshold(ps, len, line) * 1.1; // 10% increase
         var c = { feature1: f1, feature2: f2, correlation: p, lin_reg: line, threshold: t };
         correlatedFeatures.push(c);
     }
-    return correlatedFeatures;
 }
 
 
@@ -65,13 +63,10 @@ function learn(train_file) {
         let ps = toPoints(train_file[f1], train_file[f2]);
         learnHelper(train_file, max, f1, f2, ps);
     }
-    console.log('correlated features from learn: \n ');
-    console.log(correlatedFeatures);
 }
 
 
 function detect(anomaly_file) {
-    console.log("DETECT ANOMALIES")
     let anomaly_report = [];
     var size = correlatedFeatures.length;
     var i = 0;
@@ -83,14 +78,12 @@ function detect(anomaly_file) {
         for (j; j < len; j++) {
             var c = correlatedFeatures[i]
             if (isAnomalous(x[j], y[j], c)) {
-                var d = c.feature1 + "-" + c.feature2;
-                var ano = { description: d, time_step: j + 1 }
+                var ano = { reason: 'Linear Regression', timestep: j + 1, feature1: c.feature1, feature2: c.feature2, description:'y = '+c.lin_reg.a.toFixed(2)+'x + '+c.lin_reg.b.toFixed(2) }
                 anomaly_report.push(ano);
             }
         }
     }
-    console.log("ANOMALY REPORT:")
-    console.log(JSON.parse(JSON.stringify(anomaly_report)))
+    correlatedFeatures = []
     return anomaly_report;
 }
 
@@ -99,7 +92,7 @@ function isAnomalous(x, y, c) {
     return Boolean(Math.abs(y - f) > c.threshold);
 }
 
-module.exports.learnHelper = learnHelper
 module.exports.learn = learn
 module.exports.detect = detect
 module.exports.isAnomalous = isAnomalous
+module.exports.findThreshold = findThreshold

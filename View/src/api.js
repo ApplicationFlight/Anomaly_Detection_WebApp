@@ -1,7 +1,7 @@
 import axios from 'axios';
 //import {APIRootPath} from '@anomaly_detection_web_app/config';
 
-const root_path = 'http://localhost:9876/api/';
+const root_path = 'http://localhost:9876/';
 
 export type Anomaly = {
   timestep: number,

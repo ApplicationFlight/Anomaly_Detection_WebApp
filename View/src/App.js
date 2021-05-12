@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {createApiClient, Anomaly} from './api';
 import MaterialTable from "material-table";
-import { AiOutlineClockCircle, AiOutlineArrowDown } from 'react-icons/ai';
+import { AiOutlineClockCircle, AiOutlineArrowDown, AiFillGithub} from 'react-icons/ai';
 import DragAndDrop from './Components/DragAndDrop/DragAndDrop'
 import './App.css'
 
@@ -71,9 +71,11 @@ export class App extends Component {
 			<div className='table_container'>
 				<MaterialTable className='table'
 				columns={[
+					{title: 'Reason', field: 'reason' },
 					{title: 'Timestep', field: 'timestep' },
 					{title: 'Correlated Feature 1', field: 'feature1' },
-					{title: 'Correlated Feature 2', field: 'feature2' }
+					{title: 'Correlated Feature 2', field: 'feature2' },
+					{title: 'Description', field: 'description' }
 				]}
 				data={this.state.anomalies}
 				title="Results:"
@@ -103,13 +105,13 @@ export class App extends Component {
 				<div className="right">
 					<div className = "anomalies">
 					{anomalies ? <div className='text'><AiOutlineArrowDown className='icons'/> Found <mark className='colored'>{anomalies.length}</mark> anomalies</div> : null }
-					{anomalies ? this.renderAnomalies(anomalies) : <div className='text'> <AiOutlineClockCircle className='icons'/>  waiting for request...</div>}
+					{anomalies ? this.renderAnomalies(anomalies) : <div className='text'> <AiOutlineClockCircle className='icons'/>  waiting for requests...</div>}
 					</div>
 				</div>
 				<div className='footer'>
 					<p> This App was developed by: </p>
 					<p> Sara Spagnoletto, Eva Hallermeier, Samuel Memmi, Gali Seregin </p>
-					<p className='github' onClick={(e) => {e.preventDefault(); window.location.href='https://github.com/ApplicationFlight/Anomaly_Detection_WebApp';}}> Github </p>
+					<p className='github' onClick={(e) => {e.preventDefault(); window.location.href='https://github.com/ApplicationFlight/Anomaly_Detection_WebApp';}}> <AiFillGithub/> Github</p>
 				</div>
 			</main>
     )

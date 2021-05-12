@@ -2,7 +2,7 @@ const util = require('../model/anomaly_util')
 const simple_anomaly = require('./SimpleAnomalyDetector')
 const enclosingCircle = require('smallest-enclosing-circle')
 let cf = []
-var pointVector = []
+let cf_simple = []
 
 function learn(file) {
     var atts = Object.keys(file);
@@ -47,8 +47,19 @@ function toPoints(x, y) {
     return ps;
 }
 
+function learnHelperSimple(train_file, p, f1, f2, ps) {
+    if (p > 0.9) {
+        var len = train_file[Object.keys(train_file)[0]].length - 1;
+        var line = util.linear_reg(ps, len);
+        var t = simple_anomaly.findThreshold(ps, len, line) * 1.1;
+        var c = { feature1: f1, feature2: f2, correlation: p, lin_reg: line, threshold: t };
+        cf_simple.push(c);
+    }
+    return cf_simple;
+}
+
 function learnHelper(file, p, f1, f2, ps) {
-    cf = simple_anomaly.learnHelper(file, p, f1, f2, ps);
+    cf = learnHelperSimple(file, p, f1, f2, ps);
     var len = file[Object.keys(file)[0]].length - 1
     if (p > 0.5 && p < 0.9) {
         var R = []
@@ -60,6 +71,7 @@ function learnHelper(file, p, f1, f2, ps) {
             correlation: p,
             cx: cl.x,
             cy: cl.y,
+            radius: cl.r,
             threshold: t
         };
         cf.push(c);
@@ -67,7 +79,6 @@ function learnHelper(file, p, f1, f2, ps) {
 }
 
 function detect(anomaly_file) {
-    console.log("DETECT ANOMALIES")
     let anomaly_report = [];
     var size = cf.length;
     var i = 0;
@@ -82,16 +93,18 @@ function detect(anomaly_file) {
 
             var anomchek = Boolean(isAnomalous(x[j], y[j], c))
             if (anomchek === true) {
-                console.log("anomaly detected")
-                var d = c.feature1 + "-" + c.feature2;
-                var ano = { description: d, time_step: j + 1 }
-                console.log(JSON.parse(JSON.stringify(ano)))
+              if (c.correlation >= 0.9) {
+                var ano = { reason: 'Linear Regression', timestep: j + 1, feature1: c.feature1, feature2: c.feature2, description:'y = '+c.lin_reg.a.toFixed(2)+'x + '+c.lin_reg.b.toFixed(2) }
                 anomaly_report.push(ano);
+              } else {
+                var ano = { reason: 'Minimum Enclosing Circle ', timestep: j + 1, feature1: c.feature1, feature2: c.feature2, descirption:'Radius =  '+c.radius }
+                anomaly_report.push(ano);
+              }
             }
         }
     }
-    console.log("ANOMALY REPORT:")
-    console.log(JSON.parse(JSON.stringify(anomaly_report)))
+    cf = []
+    cf_simple = []
     return anomaly_report;
 }
 
@@ -101,9 +114,7 @@ function isAnomalous(x, y, c) {
     var p1 = { x: c.cx, y: c.cy };
     var p2 = { x: x, y: y };
     if (c.correlation >= 0.9) {
-        console.log("FOUND CF")
         regCheck = Boolean(simple_anomaly.isAnomalous(x, y, c))
-        console.log("regcheck " + regCheck)
     } else {
         if (c.correlation > 0.5) {
             var d = dist(p1, p2)
@@ -113,7 +124,6 @@ function isAnomalous(x, y, c) {
 
         }
     }
-    console.log("circlecheck " + circleCheck)
     return regCheck || circleCheck
 }
 

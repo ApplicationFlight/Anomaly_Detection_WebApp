@@ -1,5 +1,5 @@
 {
-	"name": "@anomaly_detection_web_app/server",
+	"name": "@anomaly_detection_web_app/Controller",
 	"version": "1.0.0",
 	"main": "index.js",
 	"scripts": {

@@ -38,6 +38,7 @@ function pearson(x, y, size) {
     return cov(x, y, size) / (Math.sqrt(variance(x, size)) * Math.sqrt(variance(y, size)));
 }
 
+
 function linear_reg(points, size) {
     var x = [];
     var y = [];
@@ -48,7 +49,7 @@ function linear_reg(points, size) {
     }
     var c = cov(x, y, size)
     var v = variance(x, size)
-    var value_a = c / v;
+    var value_a = (c / v) ;
     var avgX = avg(x, size);
     var avgY = avg(y, size);
     var value_b = avgY - (value_a * avgX);
