@@ -59,8 +59,8 @@ On the set-up box (on the left), you can firstly pick which type of algorithm yo
 After sending, as you examine the anomalies received, all set-up buttons will get disabled. To restare a new detection, click on the 'restart' button next to the 'send'.
 
 <kbd>
-  <img src="readME_Media/set-up.png" width="600" >
-<kbd/>
+  <img src="readME_Media/set-up.png" width="700" >
+</kbd>
 
 
 The request will send an `HTTP POST` at port `9876` to server. The type of algorithm selected will be included as a query parameter. As of:
