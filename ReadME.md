@@ -59,7 +59,7 @@ On the set-up box (on the left), you can firstly pick which type of algorithm yo
 After sending, as you examine the anomalies received, all set-up buttons will get disabled. To restare a new detection, click on the 'restart' button next to the 'send'.
 
 <kbd>
-  <img src="readME_Media/set-up.png" width="700" >
+  <img src="readME_Media/set-up.png" width="700"/>
 </kbd>
 
 
