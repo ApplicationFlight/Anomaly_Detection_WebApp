@@ -52,9 +52,6 @@ Various other libraries have been used, mainly on the client interface side,  yo
 **View**: the page interface in React + the client api lay here.  
 **Controller**: the server lays here.  
 
-**Other Folders**
-The configuration folder defines important configs for the entire app. (such as communication ports and addresses)
-
 ## Functionalities
 
 On the set-up box (on the left), you can firstly pick which type of algorithm you want to use. You can then proceed to upload the relevant files in the drag-zone. Once the set-up is ready, you can send to server with the 'send' button. The 'send' button won't work until the set-up has been completed.  
