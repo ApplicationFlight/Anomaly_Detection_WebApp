@@ -16,7 +16,7 @@ In addition, prepare your `.csv` file for training and detection. A correct file
 - Either a `csv` type or a `vnd.ms-excel` type (for windows convenience)
 - Has the name of columns in the first line which are names of features of the data flight
 - A new line is represented by `\n`
-- The train and anomaly file should have the same amount of columns and same names of colums for consistency purposes
+- The train and anomaly file should have the same amount of columns and same names of columns for consistency purposes
 
 Some of the cases mentioned above are checked (and rejected) by the app. But **we do not take responsibility for run-time errors** caused by an illegal flight file.
 
@@ -61,7 +61,7 @@ On the set-up box (on the left), you can firstly pick which type of algorithm yo
 After sending, as you examine the anomalies received, all set-up buttons will get disabled. In case you want a new detection, click on the 'restart' button next to the 'send'.
 
 <kbd>
-  <img src="MediaReadME/set-up.png" width="800"/>
+  <img src="MediaReadMe/set-up.png" width="800"/>
 </kbd>
 
 <br/><br/>
