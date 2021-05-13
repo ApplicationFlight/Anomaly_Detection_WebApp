@@ -65,7 +65,7 @@ After sending, as you examine the anomalies received, all set-up buttons will ge
 <br/><br/>
 The request will send an `HTTP POST` at port `9876` to server. The type of algorithm selected will be included as a query parameter. As of:
 ```
-http://localhost:8000/detect/?model_type=hybrid
+http://localhost:8080/detect/?model_type=hybrid
 ```
 The body of the request will include both train and anomaly files already converted as `json` objects.
 The server will return an array of anomalies, encoded as `json` objects.
