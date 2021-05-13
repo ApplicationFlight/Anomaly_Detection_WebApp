@@ -2,7 +2,8 @@
 
 [Click here for the Demo Video](https://www.youtube.com/watch?v=Vkt-fiWrFTI&feature=youtu.be)
 
-This project is a web application, mainly coded in `React` and `Node.js`. The app detects flight anomalies in `.csv` files, using a client-server structure.
+This project is a web application, mainly coded in Java Script with `React` library and `Node.js` platform using a client-server structure and MVC architecture.
+The app detects flight anomalies from data flight stored in `.csv` files.
 
 The user uploads a correct flight in `.csv` form for training, followed by a current flight in `.csv` form, which will be checked against the former to detect anomalies. The user can chose among 2 algorithms for detections: 'Regression' or 'Hybrid'.
 
@@ -14,9 +15,9 @@ The app is available in every OS. Before compiling and running, please make sure
 In addition, prepare your `.csv` file for training and detection. A correct file is:
 
 - Either a `csv` type or a `vnd.ms-excel` type (for windows convenience)
-- Has the name of columns in the first line
+- Has the name of columns in the first line which are names of features of the data flight
 - A new line is represented by `\n`
-- The train and anomaly file should have the same amount of columns for consistency purposes
+- The train and anomaly file should have the same amount of columns and same names of colums for consistency purposes
 
 Some of the cases mentioned above are checked (and rejected) by the app. But **we do not take responsibility for run-time errors** caused by an illegal flight file.
 
@@ -56,7 +57,7 @@ The configuration folder defines important configs for the entire app. (such as 
 ## Functionalities
 
 On the set-up box (on the left), you can firstly pick which type of algorithm you want to use. You can then proceed to upload the relevant files in the drag-zone. Once the set-up is ready, you can send to server with the 'send' button. The 'send' button won't work until the set-up has been completed.  
-After sending, as you examine the anomalies received, all set-up buttons will get disabled. To restare a new detection, click on the 'restart' button next to the 'send'.
+After sending, as you examine the anomalies received, all set-up buttons will get disabled. In case you want a new detection, click on the 'restart' button next to the 'send'.
 
 <kbd>
   <img src="readME_Media/set-up.png" width="800"/>
