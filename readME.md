@@ -1,6 +1,6 @@
 # Anomaly Detection Server - WebApp
 
-[Click here for the Demo Video](https://www.youtube.com/watch?v=Vkt-fiWrFTI&feature=youtu.be)
+[Click here for the Demo Video](https://youtu.be/ZN5gbD_lrnE)
 
 This project is a web application, developed in JavaScript with `Node.js`, and `React` for interface. The app uses a client-server structure and MVC architecture, it detects flight anomalies from data flight stored in `.csv` files.
 
@@ -61,7 +61,7 @@ On the set-up box (on the left), you can firstly pick which type of algorithm yo
 After sending, as you examine the anomalies received, all set-up buttons will get disabled. In case you want a new detection, click on the 'restart' button next to the 'send'.
 
 <kbd>
-  <img src="MediaReadMe/set-up.png" width="800"/>
+  <img src="MediaReadMe/firstpage.png" width="800"/>
 </kbd>
 
 <br/><br/>
@@ -76,8 +76,11 @@ After sending, you will be able to see the anomalies received. You'll see the nu
 You can pick how many rows to see in one page, and you can scroll the pages freely. You can search up in the whole table, or filter only a specific column.
 You can decide to sort by whichever column clicking on the arrow next to the column title.
 
-// picture of anomalies
+<kbd>
+  <img src="anomalies/firstpage.png" width="800"/>
+</kbd>
 
+<br/><br/>
 
 ## Authors
 - [Sara Spagnoletto](https://github.com/saraspagno)
