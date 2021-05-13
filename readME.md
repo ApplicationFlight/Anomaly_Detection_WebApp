@@ -15,9 +15,9 @@ The app is available in every OS. Before compiling and running, please make sure
 In addition, prepare your `.csv` file for training and detection. A correct file is:
 
 - Either a `csv` type or a `vnd.ms-excel` type (for windows convenience)
-- Has the name of columns in the first line
+- Has the name of columns in the first line which are names of features of the data flight
 - A new line is represented by `\n`
-- The train and anomaly file should have the same amount of columns for consistency purposes
+- The train and anomaly file should have the same amount of columns and same names of colums for consistency purposes
 
 Some of the cases mentioned above are checked (and rejected) by the app. But **we do not take responsibility for run-time errors** caused by an illegal flight file.
 
