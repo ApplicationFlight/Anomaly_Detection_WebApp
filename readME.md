@@ -77,7 +77,7 @@ You can pick how many rows to see in one page, and you can scroll the pages free
 You can decide to sort by whichever column clicking on the arrow next to the column title.
 
 <kbd>
-  <img src="MediaReadMe/anomalies.PNG" width="800"/>
+  <img src="MediaReadMe/anomalies.png" width="800"/>
 </kbd>
 
 <br/><br/>
