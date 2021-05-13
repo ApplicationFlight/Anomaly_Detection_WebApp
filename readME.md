@@ -57,7 +57,7 @@ The configuration folder defines important configs for the entire app. (such as 
 ## Functionalities
 
 On the set-up box (on the left), you can firstly pick which type of algorithm you want to use. You can then proceed to upload the relevant files in the drag-zone. Once the set-up is ready, you can send to server with the 'send' button. The 'send' button won't work until the set-up has been completed.  
-After sending, as you examine the anomalies received, all set-up buttons will get disabled. To restare a new detection, click on the 'restart' button next to the 'send'.
+After sending, as you examine the anomalies received, all set-up buttons will get disabled. In case you want a new detection, click on the 'restart' button next to the 'send'.
 
 <kbd>
   <img src="readME_Media/set-up.png" width="800"/>
