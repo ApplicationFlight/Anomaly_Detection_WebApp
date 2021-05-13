@@ -2,7 +2,8 @@
 
 [Click here for the Demo Video](https://www.youtube.com/watch?v=Vkt-fiWrFTI&feature=youtu.be)
 
-This project is a web application, mainly coded in `React` and `Node.js`. The app detects flight anomalies in `.csv` files, using a client-server structure.
+This project is a web application, mainly coded in Java Script with `React` library and `Node.js` platform using a client-server structure and MVC architecture.
+The app detects flight anomalies from data flight stored in `.csv` files.
 
 The user uploads a correct flight in `.csv` form for training, followed by a current flight in `.csv` form, which will be checked against the former to detect anomalies. The user can chose among 2 algorithms for detections: 'Regression' or 'Hybrid'.
 
