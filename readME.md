@@ -2,15 +2,14 @@
 
 [Click here for the Demo Video](https://www.youtube.com/watch?v=Vkt-fiWrFTI&feature=youtu.be)
 
-This project is a web application, mainly coded in Java Script with `React` library and `Node.js` platform using a client-server structure and MVC architecture.
-The app detects flight anomalies from data flight stored in `.csv` files.
+This project is a web application, developed in JavaScript with `Node.js`, and `React` for interface. The app uses a client-server structure and MVC architecture, it detects flight anomalies from data flight stored in `.csv` files.
 
 The user uploads a correct flight in `.csv` form for training, followed by a current flight in `.csv` form, which will be checked against the former to detect anomalies. The user can chose among 2 algorithms for detections: 'Regression' or 'Hybrid'.
 
 ## Getting Started
 
 ### Prerequisites
-The app is available in every OS. Before compiling and running, please make sure to have installed `node ^16.1.0` and to have available ports: `9876, 8080`.
+The app is available for every OS. Before compiling and running, please make sure to have installed `node ^16.1.0` and to have available ports: `9876, 8080`.
 
 In addition, prepare your `.csv` file for training and detection. A correct file is:
 
@@ -21,14 +20,16 @@ In addition, prepare your `.csv` file for training and detection. A correct file
 
 Some of the cases mentioned above are checked (and rejected) by the app. But **we do not take responsibility for run-time errors** caused by an illegal flight file.
 
+We provide an example under the folder 'FilesExample'.
+
 ## Compiling & Running
 
 Compiling and running are extremely easy. After downloading the project form `git`, enter the directory from `terminal/cmd` and type:
 1. npm install
 2. npm run
 
-This will install and run **both server and client**, giving you access to the whole webapp at address: `http://localhost:8000/`.
-The app will automatically open the page for convenience, but you are free to close it and visit  `http://localhost:8000/` as long as the project is running on  `terminal/cmd`.
+This will install and run **both server and client**, giving you access to the whole webapp at address: `http://localhost:8080/`.
+The app will automatically open the page for convenience, but you are free to close it and visit  `http://localhost:8080/` as long as the project is running on  `terminal/cmd`.
 
 ## Deployment
 
@@ -60,7 +61,7 @@ On the set-up box (on the left), you can firstly pick which type of algorithm yo
 After sending, as you examine the anomalies received, all set-up buttons will get disabled. In case you want a new detection, click on the 'restart' button next to the 'send'.
 
 <kbd>
-  <img src="readME_Media/set-up.png" width="800"/>
+  <img src="MediaReadME/set-up.png" width="800"/>
 </kbd>
 
 <br/><br/>

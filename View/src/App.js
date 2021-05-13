@@ -12,12 +12,12 @@ export class App extends Component {
 
   constructor(props) {
     super(props);
-		this.postData = this.postData.bind(this);
+		this.get_anomalies = this.get_anomalies.bind(this);
   }
 
 	state: AppState = {}
 
-  postData (file1, file2, algorithm) {
+  get_anomalies (file1, file2, algorithm) {
 		let train_object = {}, anomaly_object = {};
 		var reader1 = new FileReader();
 		var reader2 = new FileReader();
@@ -83,7 +83,7 @@ export class App extends Component {
 				<div className="left">
 					<div className="logo">
 					</div>
-					<DragAndDrop postData={this.postData} className="DragAndDrop"/>
+					<DragAndDrop postData={this.get_anomalies} className="DragAndDrop"/>
 				</div>
 				<div className="right">
 					<div className = "anomalies">

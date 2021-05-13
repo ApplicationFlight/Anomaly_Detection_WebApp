@@ -4,9 +4,11 @@ import axios from 'axios';
 const root_path = 'http://localhost:9876/';
 
 export type Anomaly = {
+  reason: string,
   timestep: number,
   feature1: string,
-  feature2: string
+  feature2: string,
+  desription: string
 }
 
 export type ApiClient = {
