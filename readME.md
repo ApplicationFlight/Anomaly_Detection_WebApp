@@ -50,7 +50,9 @@ Various other libraries have been used, mainly on the client interface side,  yo
 
 **Model**: the detection algorithm lay here.  
 **View**: the page interface in React + the client api lay here.  
-**Controller**: the server lays here.  
+**Controller**: the server lays here.
+
+The code has been separated in those folders. We provide a Uml diagram of the project in the files (FlightUml.png)
 
 ## Functionalities
 
